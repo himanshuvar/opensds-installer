@@ -24,7 +24,11 @@ dummy:
 
 db_driver: etcd
 db_endpoint: "{{ etcd_host }}:{{ etcd_port }},{{ etcd_host }}:{{ etcd_peer_port }}"
-
+db_username: "{{ etcd_username }}"
+db_password: "{{ etcd_password }}"
+db_cert_file: /opt/opensds-security/opensds/opensds-cert.pem
+db_key_file: /opt/opensds-security/opensds/opensds-key.pem
+db_ca_file: /opt/opensds-security/ca/ca-cert.pem
 
 ###########
 #  ETCD   #
@@ -35,6 +39,8 @@ etcd_release: v3.2.25
 etcd_host: 127.0.0.1 # For multi-node set it host ip as controllers ip address
 etcd_port: 2379
 etcd_peer_port: 2380
+etcd_username: opensds
+etcd_password: opensds@123
 
 # These fields are NOT suggested to be modified
 etcd_tarball: etcd-{{ etcd_release }}-linux-amd64.tar.gz

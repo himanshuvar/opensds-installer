@@ -77,6 +77,11 @@
   with_items:
         - { option: endpoint, value: "{{ db_endpoint }}" }
         - { option: driver, value: "{{ db_driver }}" }
+        - { option: username, value: "{{ db_username }}" }
+        - { option: password, value: "{{ db_password }}" }
+        - { option: cert_file, value: "{{ db_cert_file }}" }
+        - { option: key_file, value: "{{ db_key_file }}" }
+        - { option: ca_file, value: "{{ db_ca_file }}" }
   become: yes
 
 - name: run osdsdock daemon service
